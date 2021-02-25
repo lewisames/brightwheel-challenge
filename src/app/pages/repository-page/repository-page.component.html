@@ -1,0 +1,6 @@
+<div *ngIf="(loading | async)!; else list">
+  <brightwheel-loader></brightwheel-loader>
+</div>
+<ng-template #list>
+  <repo-list [repositories]="(repositories | async)!"></repo-list>
+</ng-template>

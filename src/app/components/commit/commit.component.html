@@ -1,0 +1,13 @@
+<div class="commit-wrapper">
+  <div class="commit-header">
+    <div class="committer">
+      <git-author [author]="author"></git-author>
+    </div>
+    <div class="date">
+      {{ commit.commit.author.date }}
+    </div>
+  </div>
+  <div class="messsage">
+    <p>{{ commit.commit.message }}</p>
+  </div>
+</div>

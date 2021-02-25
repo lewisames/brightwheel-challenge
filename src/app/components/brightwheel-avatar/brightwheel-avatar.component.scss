@@ -1,0 +1,31 @@
+@import "colors";
+
+.avatar {
+  width: 32px;
+  height:32px;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .loading {
+    width: 32px;
+    height: 32px;
+    &.pink {
+      background-color: $pink;
+    }
+    &.blue {
+      background-color: $blue;
+    }
+    &.yellow {
+      background-color: $yellow;
+    }
+  }
+}

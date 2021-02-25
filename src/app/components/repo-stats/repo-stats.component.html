@@ -1,0 +1,19 @@
+<div class="flex-wrapper">
+  <div
+    *ngIf="stargazers"
+    aria-label="stargazers count" class="item">
+    {{ stargazers | number : '1.0' }}
+    <img src="/assets/star.svg" aria-hidden="true" alt="star">
+  </div>
+  <div
+    *ngIf="forks"
+    aria-label="forks count" class="item">
+    {{ forks | number : '1.0' }}
+    <img src="/assets/fork.svg" aria-hidden="true" alt="fork">
+  </div>
+  <div
+    *ngIf="language"
+    aria-label="language" class="item">
+    {{ language }}
+  </div>
+</div>

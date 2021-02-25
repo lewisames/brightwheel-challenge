@@ -1,0 +1,70 @@
+@import "colors";
+$button-border-width: 1px;
+
+@mixin buttonStates($base-color, $hover-color, $active-color, $text-color: #FFFFFF) {
+  background-color: $base-color;
+  color: $text-color;
+  &.loading {
+    background-color: $base-color !important;
+  }
+  &:hover, &:focus {
+    color: $text-color;
+    background-color: $hover-color;
+  }
+  &:active, &.active {
+    &, &:focus, &.focus, &:hover {
+      background-color: $active-color;
+    }
+  }
+}
+
+:host {
+  display: inline-block;
+  font-weight: bold;
+  cursor: pointer;
+  border: $button-border-width solid transparent;
+  background-color: transparent;
+  color: inherit;
+  outline: none;
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: middle;
+  user-select: none;
+  box-sizing: border-box;
+  border-radius: 64px;
+  box-shadow: none;
+  transition: all 150ms ease-out;
+  font-size: 16px;
+  line-height: 24px;
+  height: 48px;
+  padding: 11px 24px;
+  text-decoration: none !important;
+
+  &:focus {
+    outline: none;
+  }
+
+  &.loading {
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &:disabled, &.disabled {
+    cursor: pointer;
+  }
+
+  &.brightwheel-button-primary {
+    @include buttonStates($yellow, $yellow-dark, $yellow-darker, $gray-dark);
+  }
+
+  &.brightwheel-button-secondary {
+    @include buttonStates(transparent, rgba(255,255,255,0.2), rgba(255,255,255,0.5), $blue);
+  }
+
+  &.disabled:not(.loading){
+    @include buttonStates($gray, $gray, $gray, $gray-light);
+    box-shadow: none;
+  }
+}

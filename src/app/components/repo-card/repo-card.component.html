@@ -1,0 +1,28 @@
+<div class="card">
+
+  <section class="card-header">
+    <div class="repository">
+      <repo-title [repo]="repo"></repo-title>
+      <repo-stats
+        [stargazers]="repo.stargazers_count"
+        [forks]="repo.forks"
+        [language]="repo.language"></repo-stats>
+    </div>
+    <div class="owner">
+      <git-author [author]="repo.owner"></git-author>
+    </div>
+  </section>
+
+  <section class="card-body">
+    <p>{{ description }}</p>
+  </section>
+
+  <section class="card-actions">
+    <button brightwheel-button
+            theme="secondary"
+            [routerLink]="commitsLink"
+            [attr.aria-label]="'View recent commits for github repo ' + repo.full_name">View recent commits
+    </button>
+  </section>
+
+</div>

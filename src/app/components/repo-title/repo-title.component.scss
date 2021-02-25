@@ -1,0 +1,18 @@
+@import "colors";
+
+:host {
+  display: block;
+}
+
+.repo-link {
+  color: $blue;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+
+  .repo-name {
+    font-weight: bold;
+  }
+}

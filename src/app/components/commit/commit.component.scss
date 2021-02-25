@@ -1,0 +1,19 @@
+@import "colors";
+
+.commit-wrapper {
+  border: 1px solid $gray;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: $gray-light;
+  box-shadow: 3px 2px 10px 1px rgb(0 0 0 / 15%);
+
+  .commit-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+}
+
+.messsage {
+  white-space: pre-wrap;
+}

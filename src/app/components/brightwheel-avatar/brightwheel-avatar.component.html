@@ -1,0 +1,7 @@
+<div class="avatar" aria-hidden="true">
+  <ng-container *ngIf="loading || !img">
+    <div class="loading" [ngClass]="loadingColor"></div>
+  </ng-container>
+  <img *ngIf="img" [src]="img" (load)="loading = false" alt="Github avatar">
+</div>
+

@@ -1,0 +1,64 @@
+@import "colors";
+
+$card-padding: 16px;
+
+:host {
+  display: block;
+  width: 420px;
+  max-width: 100%;
+}
+
+.card {
+  height: 260px;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: $card-padding;
+  border: 1px solid $gray;
+  border-radius: 4px;
+  background-color: $gray-light;
+  box-shadow: 3px 2px 10px 1px rgb(0 0 0 / 7%);
+
+  p {
+    margin: 0;
+  }
+
+  .card-header {
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 16px;
+
+    .repository {
+      margin-bottom: 8px;
+
+    }
+
+    .owner {
+      margin-left: -$card-padding;
+      margin-right: -$card-padding;
+      padding: 8px $card-padding;
+      background-color: $gray-lighter;
+    }
+
+  }
+
+  .card-body {
+    font-size: 14px;
+    line-height: 20px;
+    p {
+      white-space: pre-wrap;
+    }
+  }
+
+  .card-actions {
+    justify-self: flex-end;
+    align-self: flex-end;
+    margin-top: auto;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  :host {
+    width: 100%;
+  }
+}

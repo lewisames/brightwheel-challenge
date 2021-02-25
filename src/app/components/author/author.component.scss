@@ -1,0 +1,29 @@
+@import "colors";
+
+:host {
+  display: block;
+}
+
+.flex-wrapper {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+
+.avatar {
+  margin-right: 8px;
+}
+
+.text {
+  color: $gray-dark;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+
+
+
+
+

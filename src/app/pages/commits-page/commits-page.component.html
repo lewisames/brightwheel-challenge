@@ -1,0 +1,13 @@
+<button
+  brightwheel-button
+  theme="primary"
+  class="back-btn"
+  [routerLink]="['/']">Back to Repos</button>
+
+<div *ngIf="(loading | async)!; else list">
+  <brightwheel-loader></brightwheel-loader>
+</div>
+<ng-template #list>
+  <github-commits-list [commits]="(commits | async)!"></github-commits-list>
+</ng-template>
+
