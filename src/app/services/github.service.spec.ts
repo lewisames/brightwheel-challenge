@@ -33,7 +33,7 @@ describe('GithubService', () => {
           done();
         });
 
-      const call: TestRequest = backend.expectOne(`${service.url}/search/repositories?q=stars:%3E1000&sort=stars&order=desc`);
+      const call: TestRequest = backend.expectOne(`${service.url}/search/repositories?q=stars:%3E1000&sort=stars&order=desc&per_page=100`);
       expect(call.request.method).toEqual('GET');
       call.flush(mockResponse);
       backend.verify();
@@ -72,7 +72,7 @@ describe('GithubService', () => {
         (res) => {
           expect(Array.isArray(res)).toBeTruthy();
           expect(service.repositories.next).toHaveBeenCalledTimes(0);
-          backend.expectNone(`${service.url}/search/repositories?q=stars:%3E1000&sort=stars&order=desc`);
+          backend.expectNone(`${service.url}/search/repositories?q=stars:%3E1000&sort=stars&order=desc&per_page=100`);
           done();
         });
     });
@@ -86,7 +86,7 @@ describe('GithubService', () => {
         }
       );
 
-      const call: TestRequest = backend.expectOne(`${service.url}/search/repositories?q=stars:%3E1000&sort=stars&order=desc`);
+      const call: TestRequest = backend.expectOne(`${service.url}/search/repositories?q=stars:%3E1000&sort=stars&order=desc&per_page=100`);
       expect(call.request.method).toEqual('GET');
       call.error(new ErrorEvent('err'));
       backend.verify();

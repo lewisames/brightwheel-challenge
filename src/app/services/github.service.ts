@@ -22,7 +22,8 @@ export class GithubService {
     const query = {
       q: 'stars:>1000',
       sort: 'stars',
-      order: 'desc'
+      order: 'desc',
+      per_page: '100'
     };
     const params = new HttpParams({ fromObject: query });
 
