@@ -4,12 +4,12 @@ import { GithubRepository } from '../../models/githubRepository';
 const descriptionMaxLength = 200;
 
 @Component({
-  selector: 'repo-card',
-  templateUrl: './repo-card.component.html',
-  styleUrls: ['./repo-card.component.scss'],
+  selector: 'github-repo-card',
+  templateUrl: './github-repo-card.component.html',
+  styleUrls: ['./github-repo-card.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class RepoCardComponent implements OnInit {
+export class GithubRepoCardComponent implements OnInit {
   @Input() public repo!: GithubRepository;
 
   public description = '';

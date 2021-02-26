@@ -1,10 +1,10 @@
 <div class="commit-wrapper">
   <div class="commit-header">
     <div class="committer">
-      <git-author [author]="author"></git-author>
+      <github-author [author]="author"></github-author>
     </div>
     <div class="date">
-      {{ commit.commit.author.date }}
+      {{ commit.commit.author.date | date : 'medium' }}
     </div>
   </div>
   <div class="messsage">

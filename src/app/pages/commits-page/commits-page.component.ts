@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { GithubService } from '../../services/github.service';
 import { BehaviorSubject } from 'rxjs';
 import { GithubCommit } from '../../models/githubCommit';
+import { LoadingState } from '../../models/ui';
 
 @Component({
   selector: 'app-commits-page',
@@ -12,19 +13,26 @@ import { GithubCommit } from '../../models/githubCommit';
 })
 export class CommitsPageComponent implements OnInit {
   public commits = new BehaviorSubject<GithubCommit[]>([]);
-  public loading = new BehaviorSubject<boolean>(false);
+  public loading = new BehaviorSubject<LoadingState>('loading');
+  public repo = '';
+  public owner = '';
 
   constructor(private route: ActivatedRoute,
               private githubService: GithubService) { }
 
   ngOnInit(): void {
-    const repo = this.route.snapshot.paramMap.get('repo') || '';
-    const owner = this.route.snapshot.paramMap.get('owner') || '';
-    this.loading.next(true);
-    this.githubService.getCommits(owner, repo).subscribe(
-      commits => this.commits.next(commits),
-      err => console.log(err),
-        () => this.loading.next(false)
+    this.repo = this.route.snapshot.paramMap.get('repo') || '';
+    this.owner = this.route.snapshot.paramMap.get('owner') || '';
+    this.loading.next('loading');
+    this.githubService.getCommits(this.owner, this.repo).subscribe(
+      commits => {
+        this.commits.next(commits);
+        this.loading.next('ready')
+      },
+      err => {
+        console.log(err);
+        this.loading.next('error');
+      }
     );
   }
 }

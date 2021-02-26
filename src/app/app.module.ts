@@ -4,36 +4,36 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
-import { RepoCardComponent } from './components/repo-card/repo-card.component';
-import { RepoListComponent } from './components/repo-list/repo-list.component';
+import { GithubRepoCardComponent } from './components/github-repo-card/github-repo-card.component';
+import { GithubRepoListComponent } from './components/github-repo-list/github-repo-list.component';
 import { BrightwheelButtonComponent } from './components/brightwheel-button/brightwheel-button.component';
-import { BrightwheelAvatarComponent } from './components/brightwheel-avatar/brightwheel-avatar.component';
-import { AuthorComponent } from './components/author/author.component';
-import { RepoStatsComponent } from './components/repo-stats/repo-stats.component';
+import { GithubRepoStatsComponent } from './components/github-repo-stats/github-repo-stats.component';
 import { RepositoryPageComponent } from './pages/repository-page/repository-page.component';
 import { CommitsPageComponent } from './pages/commits-page/commits-page.component';
-import { RepoTitleComponent } from './components/repo-title/repo-title.component';
-import { CommitComponent } from './components/commit/commit.component';
-import { CommitsListComponent } from './components/commits-list/commits-list.component';
 import { BrightwheelHeaderComponent } from './components/brightwheel-header/brightwheel-header.component';
 import { BrightwheelLoaderComponent } from './components/brightwheel-loader/brightwheel-loader.component';
+import { GithubAvatarComponent } from './components/github-avatar/github-avatar.component';
+import { GithubCommitsListComponent } from './components/github-commits-list/github-commits-list.component';
+import { GithubAuthorComponent } from './components/github-author/github-author.component';
+import { GithubCommitComponent } from './components/github-commit/github-commit.component';
+import { BrightwheelErrorComponent } from './components/brightwheel-error/brightwheel-error.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RepoCardComponent,
-    RepoListComponent,
+    GithubRepoCardComponent,
+    GithubRepoListComponent,
     BrightwheelButtonComponent,
-    BrightwheelAvatarComponent,
-    AuthorComponent,
-    RepoStatsComponent,
+    GithubAvatarComponent,
+    GithubAuthorComponent,
+    GithubRepoStatsComponent,
     RepositoryPageComponent,
     CommitsPageComponent,
-    RepoTitleComponent,
-    CommitComponent,
-    CommitsListComponent,
+    GithubCommitComponent,
+    GithubCommitsListComponent,
     BrightwheelHeaderComponent,
     BrightwheelLoaderComponent,
+    BrightwheelErrorComponent,
   ],
   imports: [
     BrowserModule,

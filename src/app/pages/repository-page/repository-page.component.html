@@ -1,6 +1,13 @@
-<div *ngIf="(loading | async)!; else list">
-  <brightwheel-loader></brightwheel-loader>
+<h1>The 100 most starred repos of GitHub</h1>
+
+<div [ngSwitch]="(loading | async)">
+  <ng-container *ngSwitchCase="'ready'">
+    <github-repo-list [repositories]="(repositories | async)!"></github-repo-list>
+  </ng-container>
+  <ng-container *ngSwitchCase="'error'">
+    <brightwheel-error></brightwheel-error>
+  </ng-container>
+  <ng-container *ngSwitchCase="'loading'">
+    <brightwheel-loader></brightwheel-loader>
+  </ng-container>
 </div>
-<ng-template #list>
-  <repo-list [repositories]="(repositories | async)!"></repo-list>
-</ng-template>

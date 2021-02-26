@@ -1,0 +1,17 @@
+@import "variables";
+@import "colors";
+
+:host {
+  display: block;
+  text-align: center;
+}
+
+.error {
+  display: inline-block;
+  margin: 0 auto;
+  border: 1px solid $pink-darker;
+  background-color: $gray-light;
+  padding: $card-padding;
+  border-radius: 4px;
+  box-shadow: 3px 2px 10px 1px rgb(0 0 0 / 7%);
+}

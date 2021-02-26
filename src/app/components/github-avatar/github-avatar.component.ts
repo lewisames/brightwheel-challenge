@@ -1,11 +1,11 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'brightwheel-avatar',
-  templateUrl: './brightwheel-avatar.component.html',
-  styleUrls: ['./brightwheel-avatar.component.scss']
+  selector: 'github-avatar',
+  templateUrl: './github-avatar.component.html',
+  styleUrls: ['./github-avatar.component.scss']
 })
-export class BrightwheelAvatarComponent {
+export class GithubAvatarComponent {
   @Input() img = '';
   public loading = true;
   public loadingColor: string;

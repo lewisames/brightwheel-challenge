@@ -3,10 +3,10 @@ import { GithubCommit } from '../../models/githubCommit';
 
 @Component({
   selector: 'github-commits-list',
-  templateUrl: './commits-list.component.html',
-  styleUrls: ['./commits-list.component.scss']
+  templateUrl: './github-commits-list.component.html',
+  styleUrls: ['./github-commits-list.component.scss']
 })
-export class CommitsListComponent implements OnInit {
+export class GithubCommitsListComponent implements OnInit {
   @Input() public commits: GithubCommit[] = [];
   constructor() { }
 

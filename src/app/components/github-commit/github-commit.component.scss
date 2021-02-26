@@ -1,0 +1,30 @@
+@import "colors";
+@import "variables";
+
+
+.commit-wrapper {
+  border: 1px solid $gray;
+  border-radius: 4px;
+  padding: 16px;
+  background-color: $gray-light;
+  box-shadow: 3px 2px 10px 1px rgb(0 0 0 / 7%);
+
+  .commit-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: -$card-padding;
+    margin-right: -$card-padding;
+    margin-top: -$card-padding;
+    margin-bottom: 8px;
+    padding: $card-padding;
+    background-color: $gray-lighter;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+}
+
+.messsage {
+  white-space: pre-wrap;
+  overflow: hidden;
+}

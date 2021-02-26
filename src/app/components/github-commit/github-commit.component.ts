@@ -4,10 +4,10 @@ import { GithubAuthor } from '../../models/githubAuthor';
 
 @Component({
   selector: 'github-commit',
-  templateUrl: './commit.component.html',
-  styleUrls: ['./commit.component.scss']
+  templateUrl: './github-commit.component.html',
+  styleUrls: ['./github-commit.component.scss']
 })
-export class CommitComponent implements OnInit {
+export class GithubCommitComponent implements OnInit {
   @Input() public commit!: GithubCommit;
 
   public author!: GithubAuthor | GithubCommitAuthor;

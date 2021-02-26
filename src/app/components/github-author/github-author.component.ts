@@ -3,12 +3,12 @@ import { GithubAuthor } from '../../models/githubAuthor';
 import { GithubCommitAuthor } from '../../models/githubCommit';
 
 @Component({
-  selector: 'git-author',
-  templateUrl: './author.component.html',
-  styleUrls: ['./author.component.scss'],
+  selector: 'github-author',
+  templateUrl: './github-author.component.html',
+  styleUrls: ['./github-author.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AuthorComponent implements OnInit {
+export class GithubAuthorComponent implements OnInit {
   @Input() public author!: GithubAuthor | GithubCommitAuthor;
 
   public name!: string;

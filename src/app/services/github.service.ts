@@ -10,8 +10,8 @@ import { GithubCommit } from '../models/githubCommit';
 })
 export class GithubService {
   private headers = new HttpHeaders('Accept: application/vnd.github.v3+json');
-  private url = 'https://api.github.com';
-  private repositories = new BehaviorSubject<GithubRepository[]>([]);
+  public url = 'https://api.github.com';
+  public repositories = new BehaviorSubject<GithubRepository[]>([]);
 
   constructor(private http: HttpClient) {
   }
@@ -39,7 +39,7 @@ export class GithubService {
       }));
   }
 
-  getCommits(owner: string, repo: string): Observable<GithubCommit[]> {
+  getCommits(owner: string = '', repo: string = ''): Observable<GithubCommit[]> {
     return this.http.get(`${this.url}/repos/${owner}/${repo}/commits`, { headers: this.headers }).pipe(
       map((res: any) => res)
     );

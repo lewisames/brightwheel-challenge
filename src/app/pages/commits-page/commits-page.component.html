@@ -1,13 +1,18 @@
+<h1>Recent commits to {{owner}}/{{repo}}</h1>
 <button
   brightwheel-button
   theme="primary"
   class="back-btn"
   [routerLink]="['/']">Back to Repos</button>
 
-<div *ngIf="(loading | async)!; else list">
-  <brightwheel-loader></brightwheel-loader>
+<div [ngSwitch]="(loading | async)">
+  <ng-container *ngSwitchCase="'ready'">
+    <github-commits-list [commits]="(commits | async)!"></github-commits-list>
+  </ng-container>
+  <ng-container *ngSwitchCase="'error'">
+    <brightwheel-error></brightwheel-error>
+  </ng-container>
+  <ng-container *ngSwitchCase="'loading'">
+    <brightwheel-loader></brightwheel-loader>
+  </ng-container>
 </div>
-<ng-template #list>
-  <github-commits-list [commits]="(commits | async)!"></github-commits-list>
-</ng-template>
-

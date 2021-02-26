@@ -1,6 +1,8 @@
 # Brightwheel
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.2.1. This simple SPA will hit GitHub's REST API and fetch a list of the 100 most starred repos. Each Repo can be clicked through to see recent commits.
+
+To help with rate-limiting for unauthenticated API calls to GitHub's APIs, the repos page is cached after first load and saved in memory for the duration of the session.
 
 ## Development server
 
@@ -18,9 +20,6 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
 ## Further help
 

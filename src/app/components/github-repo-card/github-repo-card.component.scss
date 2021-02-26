@@ -1,6 +1,5 @@
 @import "colors";
-
-$card-padding: 16px;
+@import "variables";
 
 :host {
   display: block;
@@ -31,6 +30,10 @@ $card-padding: 16px;
     .repository {
       margin-bottom: 8px;
 
+      .repo-name {
+        font-weight: bold;
+      }
+
     }
 
     .owner {
@@ -45,6 +48,7 @@ $card-padding: 16px;
   .card-body {
     font-size: 14px;
     line-height: 20px;
+
     p {
       white-space: pre-wrap;
     }

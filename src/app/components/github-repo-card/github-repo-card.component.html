@@ -2,14 +2,24 @@
 
   <section class="card-header">
     <div class="repository">
-      <repo-title [repo]="repo"></repo-title>
-      <repo-stats
+      <div>
+        <a
+          class="repo-link"
+          [href]="repo.html_url"
+          target="_blank"
+          [title]="repo.full_name"
+          [attr.aria-label]="'Link to '+ repo.name"
+          rel="noreferrer noopener">
+          {{repo.owner.login}} / <span class="repo-name">{{ repo.name }}</span>
+        </a>
+      </div>
+      <github-repo-stats
         [stargazers]="repo.stargazers_count"
         [forks]="repo.forks"
-        [language]="repo.language"></repo-stats>
+        [language]="repo.language"></github-repo-stats>
     </div>
     <div class="owner">
-      <git-author [author]="repo.owner"></git-author>
+      <github-author [author]="repo.owner"></github-author>
     </div>
   </section>
 
