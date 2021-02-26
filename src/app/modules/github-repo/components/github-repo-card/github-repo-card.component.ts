@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { GithubRepository } from '../../models/githubRepository';
+import { GithubRepository } from '../../../../models/githubRepository';
 
 const descriptionMaxLength = 200;
 

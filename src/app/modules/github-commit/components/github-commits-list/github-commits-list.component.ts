@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GithubCommit } from '../../models/githubCommit';
+import { GithubCommit } from '../../../../models/githubCommit';
 
 @Component({
   selector: 'github-commits-list',

@@ -1,6 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { GithubCommit, GithubCommitAuthor } from '../../models/githubCommit';
-import { GithubAuthor } from '../../models/githubAuthor';
+import { GithubCommit, GithubCommitAuthor } from '../../../../models/githubCommit';
+import { GithubAuthor } from '../../../../models/githubAuthor';
 
 @Component({
   selector: 'github-commit',

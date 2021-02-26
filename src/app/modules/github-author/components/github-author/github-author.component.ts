@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { GithubAuthor } from '../../models/githubAuthor';
-import { GithubCommitAuthor } from '../../models/githubCommit';
+import { GithubAuthor } from '../../../../models/githubAuthor';
+import { GithubCommitAuthor } from '../../../../models/githubCommit';
 
 @Component({
   selector: 'github-author',

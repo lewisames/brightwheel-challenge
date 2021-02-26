@@ -1,4 +1,4 @@
-@import "colors";
+@import "src/app/scss/colors";
 $button-border-width: 1px;
 
 @mixin buttonStates($base-color, $hover-color, $active-color, $text-color: #FFFFFF) {
